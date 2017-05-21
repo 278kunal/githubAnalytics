@@ -5,7 +5,7 @@ A web application with insights into Github data. Gives data of popular reposito
 
 - see the `package.json`
 - type `npm install`
-- type 'bower install'
+- type `bower install`
 
 ### Create a GitHub client
 
