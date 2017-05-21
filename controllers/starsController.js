@@ -1,13 +1,19 @@
 var starsController = function(githubService){
         var getData = function(req,res){
             githubService.getStars(function(err,results){
-                console.log(results.items);
                 res.render('stars',{title: 'Stars', item: results.items });
             })
         }
 
+        var getJSON = function(req,res){
+            githubService.getStars(function(err,results){
+                res.json({data: results.items});
+            })
+        }
+
         return {
-            getData : getData
+            getData : getData,
+            getJSON : getJSON
         }
 }
 

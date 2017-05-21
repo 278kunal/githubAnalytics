@@ -3,37 +3,54 @@ var githubService = function () {
 
     var githubCliDotCom = new GitHubClient({
         baseUri: "https://api.github.com",
-        token: "842bfa7494db1523b6aa81295e4ef2c5928c61a5"
+        token: "319bc8b9b39f11abc9718c1b8263f93b8164ff14"
     });
 
     var getJSONData = function (technology, queryString, cb) {
 
-        var searchString = "q="+queryString+"language:"+technology;
-        
+        var searchString = "q=" + queryString + "language:" + technology;
+
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
             })
             .then(response => {
                 cb(null, response.data);
             });
-        
+
     }
 
-    var getStars = function(cb){
+    var getStars = function (cb) {
 
         var searchString = "q=stars:>1&s=stars&type=Repositories";
 
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
-        })
-        .then(response => {
-            cb(null, response.data);
-        });
+            })
+            .then(response => {
+                cb(null, response.data);
+            }, err => {
+                console.log(err);
+            });
+    }
+
+    var getForks = function (cb) {
+
+        var searchString = "q=forks%3A%3E1&sort=forks&type=Repositories"
+
+        githubCliDotCom.getData({
+                path: `/search/repositories?${searchString}`
+            })
+            .then(response => {
+                cb(null, response.data);
+            }, err => {
+                console.log(err)
+            });
     }
 
     return {
         getJSONData: getJSONData,
-        getStars: getStars 
+        getStars: getStars,
+        getForks: getForks
     };
 };
 

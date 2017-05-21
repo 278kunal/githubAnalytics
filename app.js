@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var search = require('./routes/search');
 var stars = require('./routes/stars');
+var forks = require('./routes/forks');
 
 var app = express();
 
@@ -25,9 +25,9 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/search', search);
 app.use('/stars',stars);
+app.use('/forks',forks);
 
 app.listen(port, function (err) {
     console.log('Running server on port ' + port);
