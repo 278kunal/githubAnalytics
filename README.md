@@ -6,6 +6,7 @@ A web application with insights into Github data. Gives data of popular reposito
 - see the `package.json`
 - type `npm install`
 - type `bower install`
+- open console type `gulp serve`
 
 ### Create a GitHub client
 
