@@ -1,0 +1,22 @@
+{
+  "name": "githubAnalytics",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Kunal Singh <278kunal@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/278kunal/githubAnalytics",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "bootstrap": "^3.3.7"
+  }
+}
