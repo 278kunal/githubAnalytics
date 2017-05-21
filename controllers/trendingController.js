@@ -1,11 +1,14 @@
-var starsController = function (githubService) {
+var trendingController = function (githubService) {
     var getData = function (req, res) {
-        githubService.getStars(function (err, results) {
-            res.render('stars', {
-                title: 'Stars',
+        var year = req.params.year;
+        console.log(githubService);
+        githubService.getTrending(year, function (err, results) {
+            res.render('trending', {
+                title: 'Trending',
+                year: year,
                 item: results.items
             });
-        })
+        });
     }
 
     var getJSON = function (req, res) {
@@ -22,4 +25,4 @@ var starsController = function (githubService) {
     }
 }
 
-module.exports = starsController
+module.exports = trendingController;

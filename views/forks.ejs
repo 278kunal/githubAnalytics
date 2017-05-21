@@ -38,19 +38,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home <span class="sr-only"></span></a></li>
+                    <li><a href="/">Home <span class="sr-only"></span></a></li>
                     <li><a href="stars">Stars</a></li>
-                    <li><a href="forks">Forks</a></li>
+                    <li class="active"><a href="forks">Forks</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Custom <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trending <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a href="/trending/year/2017">2017</a></li>
+                            <li><a href="/trending/year/2016">2016</a></li>
+                            <li><a href="/trending/year/2015">2015</a></li>
+                            <li><a href="/trending/year/2014">2014</a></li>
+                            <li><a href="/trending/year/2013">2013</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -84,23 +82,42 @@
             </thead>
             <tbody>
                 <% for(var i = 0; i < item.length; i++) {%>
-                <tr>
-                    <td><%= i+1 %></td>
-                    <td><img class="img" src="<%= item[i].owner.avatar_url %>" alt="" height='15' width='15' /><a href="<%= item[i].owner.html_url %>" target=_blank><%= item[i].owner.login %></a></td>
-                    <td><a href="<%= item[i].html_url %>" target=_blank><%= item[i].name %></a></td>
-                    <td><%= item[i].language %></td>
-                    <td><%= item[i].stargazers_count %></td>
-                    <td><%= item[i].forks %></td>
-                    <td><%= item[i].watchers %></td>
-                </tr>
-                <%}%>
+                    <tr>
+                        <td>
+                            <%= i+1 %>
+                        </td>
+                        <td><img class="img" src="<%= item[i].owner.avatar_url %>" alt="" height='15' width='15' />
+                            <a href="<%= item[i].owner.html_url %>"
+                                target=_blank>
+                                <%= item[i].owner.login %>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="<%= item[i].html_url %>" target=_blank>
+                                <%= item[i].name %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= item[i].language %>
+                        </td>
+                        <td>
+                            <%= item[i].stargazers_count %>
+                        </td>
+                        <td>
+                            <%= item[i].forks %>
+                        </td>
+                        <td>
+                            <%= item[i].watchers %>
+                        </td>
+                    </tr>
+                    <%}%>
             </tbody>
         </table>
 
         <div class="page-header">
             <h1>Fork Chart</h1>
         </div>
-        
+
         <div id="plot">
         </div>
 

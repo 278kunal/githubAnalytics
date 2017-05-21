@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var search = require('./routes/search');
 var stars = require('./routes/stars');
 var forks = require('./routes/forks');
+var trending = require('./routes/trending');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/search', search);
 app.use('/stars',stars);
 app.use('/forks',forks);
+app.use('/trending',trending);
 
 app.listen(port, function (err) {
     console.log('Running server on port ' + port);

@@ -39,16 +39,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home <span class="sr-only"></span></a></li>
-                    <li class="active"><a href="stars">Stars</a></li>
+                    <li><a href="stars">Stars</a></li>
                     <li><a href="forks">Forks</a></li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trending <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li id="2017"><a href="/trending/year/2017">2017</a></li>
-                            <li id="2016"><a href="/trending/year/2016">2016</a></li>
-                            <li id="2015"><a href="/trending/year/2015">2015</a></li>
-                            <li id="2014"><a href="/trending/year/2014">2014</a></li>
-                            <li id="2013"><a href="/trending/year/2013">2013</a></li>
+                            <li><a class="btn-year" id="2017" href="/trending/year/2017">2017</a></li>
+                            <li><a class="btn-year" id="2016" href="/trending/year/2016">2016</a></li>
+                            <li><a class="btn-year" id="2015" href="/trending/year/2015">2015</a></li>
+                            <li><a class="btn-year" id="2014" href="/trending/year/2014">2014</a></li>
+                            <li><a class="btn-year" id="2013" href="/trending/year/2013">2013</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,7 +65,9 @@
     </nav>
     <div class="container">
         <div class="page-header">
-            <h1>Star Ranking</h1>
+            <h1>Trending Repositories |
+                <%= year %>
+            </h1>
         </div>
 
         <table class="table table-striped">
@@ -87,7 +89,8 @@
                             <%= i+1 %>
                         </td>
                         <td><img class="img" src="<%= item[i].owner.avatar_url %>" alt="" height='15' width='15' />
-                            <a href="<%= item[i].owner.html_url %>" target=_blank>
+                            <a href="<%= item[i].owner.html_url %>"
+                                target=_blank>
                                 <%= item[i].owner.login %>
                             </a>
                         </td>
@@ -114,7 +117,7 @@
         </table>
 
         <div class="page-header">
-            <h1>Star Chart</h1>
+            <h1>Trending Repositories Chart</h1>
         </div>
 
         <div id="plot">
@@ -127,7 +130,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="/javascripts/stars.js"></script>
+    <script src="/javascripts/trending.js"></script>
 </body>
 
 </html>
