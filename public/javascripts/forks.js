@@ -34,7 +34,13 @@ var drawChart = function (chartData) {
     var options = {
         'title': 'Fork rating of repositories',
         'width': 1024,
-        'height': 800
+        'height': 800,
+        hAxis: {
+          title: 'Repositories'
+          },
+        vAxis: {
+          title : 'Forks'
+        }
     };
 
     // Instantiate and draw our chart, passing in some options.

@@ -1,10 +1,9 @@
 var trendingController = function (githubService) {
     var getData = function (req, res) {
         var year = req.params.year;
-        console.log(githubService);
         githubService.getTrending(year, function (err, results) {
             res.render('trending', {
-                title: 'Trending',
+                title: ' | Trending',
                 year: year,
                 item: results.items
             });

@@ -2,7 +2,7 @@ var starsController = function (githubService) {
     var getData = function (req, res) {
         githubService.getStars(function (err, results) {
             res.render('stars', {
-                title: 'Stars',
+                title: ' | Stars',
                 item: results.items
             });
         })

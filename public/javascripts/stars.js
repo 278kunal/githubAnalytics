@@ -32,9 +32,15 @@ var drawChart = function (chartData) {
 
     // Set chart options
     var options = {
-        'title': 'Star rating of repositories',
-        'width': 1024,
-        'height': 800
+        title: 'Star rating of repositories',
+        width: 1024,
+        height: 800,
+        hAxis: {
+          title: 'Repositories'
+          },
+        vAxis: {
+          title : 'Stars'
+        }
     };
 
     // Instantiate and draw our chart, passing in some options.

@@ -2,7 +2,7 @@ var forksController = function (githubService) {
     var getData = function (req, res) {
         githubService.getForks(function (err, results) {
             res.render('forks', {
-                title: 'Forks',
+                title: ' | Forks',
                 item: results.items
             })
         })

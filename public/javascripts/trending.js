@@ -1,5 +1,6 @@
 // Get data to be populated into the charts
 var getChartData = function(year,cb) {
+    console.log("I am in getchartData");
     $.getJSON(year+"/data.json", function (result) {
         // Do whatever what you want with this data
         var i;
@@ -32,9 +33,15 @@ var drawChart = function (chartData) {
 
     // Set chart options
     var options = {
-        'title': 'Star rating of repositories',
+        'title': 'Trending repositories',
         'width': 1024,
-        'height': 800
+        'height': 800,
+        hAxis: {
+          title: 'Repositories'
+          },
+        vAxis: {
+          title : 'Stars'
+        }
     };
 
     // Instantiate and draw our chart, passing in some options.

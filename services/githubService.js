@@ -3,7 +3,7 @@ var githubService = function () {
 
     var githubCliDotCom = new GitHubClient({
         baseUri: "https://api.github.com",
-        token: "a734351b5ce868d0a761b54e45f9d39478c2de4f"
+        token: ""
     });
 
     var getJSONData = function (technology, queryString, cb) {
@@ -52,12 +52,12 @@ var githubService = function () {
         var date = new Date();
         var currYear = date.getFullYear()
         var year = parseInt(year);
-        var currDate, initalDate,month,finalDate,getM;
+        var currDate, initalDate, month, finalDate, getM;
         if (currYear === year) {
             getM = date.getMonth();
             month = getM + 1;
-            if(getM<10){
-                month = "0"+month.toString();
+            if (getM < 10) {
+                month = "0" + month.toString();
             }
             currDate = date.getFullYear().toString() + "-" + month + "-" + date.getDate().toString();
             initialDate = date.getFullYear().toString() + "-01-01";
@@ -73,8 +73,8 @@ var githubService = function () {
 
         var dateRange = getDateRange(year);
 
-        var searchString = "q=created%3A"+dateRange+"&type=Repositories&stars:>1&sort=s";
-        console.log("Request on: "+searchString)
+        var searchString = "q=created%3A" + dateRange + "&type=Repositories&stars:>1&sort=s";
+
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
             })
