@@ -38,11 +38,13 @@ var githubCliDotCom = new GitHubClient({
   token: process.env.TOKEN_GITHUB_DOT_COM
 });
 
-var handle = "k33g";
-githubCliDotCom.getData({path:`/users/${handle}`})
-  .then(response => {
-    console.log(response.data);
-  });
+var searchString = "q=stars:>1&s=stars&type=Repositories";
+githubCliDotCom.getData({
+         path: `/search/repositories?${searchString}`
+       })
+      .then(response => {
+        console.log(response.data);
+     });
 
 ```
 
