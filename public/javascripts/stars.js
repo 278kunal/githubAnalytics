@@ -1,6 +1,6 @@
 // Get data to be populated into the charts
-var getChartData = function(cb) {
-    $.getJSON("stars/data.json", function (result) {
+var getChartData = function(title,cb) {
+    $.getJSON(title+"/data.json", function (result) {
         // Do whatever what you want with this data
         var i;
         var chartData = [];
@@ -48,4 +48,17 @@ var drawChart = function (chartData) {
     chart.draw(data, options);
 }
 
-getChartData(drawChart);
+$('.nav-pills li a').click(function(e) {
+    var $this = $(this);
+    console.log(this.title);
+    $this.parent().siblings().removeClass('active').end().addClass('active');
+});
+var _self = this;
+var ele = $('.nav-pills li');
+for(var i = 0 ; i < ele.length; i++){
+    ele[i].addEventListener('click',_self.handleEvents);
+}
+
+var handleEvents = function(e){
+    console.log(e);
+}

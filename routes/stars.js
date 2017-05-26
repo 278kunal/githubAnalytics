@@ -6,7 +6,10 @@ var starsController = require('../controllers/starsController')(githubService);
 starsRouter.route('/')
     .get(starsController.getData);
 
-starsRouter.route('/data.json')
+starsRouter.route('/language/:lang')
+    .get(starsController.getData);
+
+starsRouter.route('/language/:lang/data.json')
     .get(starsController.getJSON);
 
 module.exports = starsRouter;

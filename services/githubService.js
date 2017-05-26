@@ -19,9 +19,8 @@ var githubService = function () {
 
     }
 
-    var getStars = function (cb) {
-
-        var searchString = "q=stars:>1&s=stars&type=Repositories";
+    var getStars = function (language,cb) {
+        var searchString = "q=stars:>1+language:"+language+"&type=Repositories";
 
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
