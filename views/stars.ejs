@@ -7,24 +7,11 @@
         <% include ../views/partials/nav %>
             <div class="container">
                 <div class="page-header">
-                    <h1>Star Ranking</h1>
+                    <h1>Star Ranking | <%=lang%></h1>
                 </div>
-
-                <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a title="all" href="/stars/language/All">All</a></li>
-                    <li role="presentation" class=""><a title="javascript" href="/stars/language/javascript">Javascript</a></li>
-                    <li role="presentation" class=""><a title="html" href="/stars/language/html">HTML</a></li>
-                    <li role="presentation" class=""><a title="css" href="/stars/language/css">CSS</a></li>
-                    <li role="presentation" class=""><a title="java" href="/stars/language/java">Java</a></li>
-                    <li role="presentation" class=""><a title="python" href="/stars/language/python">Python</a></li>
-                    <li role="presentation" class=""><a title="php" href="/stars/language/php">PHP</a></li>
-                    <li role="presentation" class=""><a title="c" href="/stars/language/c">C</a></li>
-                    <li role="presentation" class=""><a title="c++" href="/stars/language/cpp">C++</a></li>
-                    <li role="presentation" class=""><a title="ruby" href="/stars/language/ruby">Ruby</a></li>
-                    <li role="presentation" class=""><a title="go" href="/stars/language/go">Go</a></li>
-                    <li role="presentation" class=""><a title="r" href="/stars/language/r">R</a></li>
-                    <li role="presentation" class=""><a title="sql" href="/stars/language/sql">SQL</a></li>
-                </ul>
+                
+                <% include ../views/partials/navpills %>
+                
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -71,7 +58,7 @@
                 </table>
 
                 <div class="page-header">
-                    <h1>Star Chart</h1>
+                    <h1>Star Chart | <%=lang%></h1>
                 </div>
 
                 <div id="plot">

@@ -48,17 +48,4 @@ var drawChart = function (chartData) {
     chart.draw(data, options);
 }
 
-$('.nav-pills li a').click(function(e) {
-    var $this = $(this);
-    console.log(this.title);
-    $this.parent().siblings().removeClass('active').end().addClass('active');
-});
-var _self = this;
-var ele = $('.nav-pills li');
-for(var i = 0 ; i < ele.length; i++){
-    ele[i].addEventListener('click',_self.handleEvents);
-}
-
-var handleEvents = function(e){
-    console.log(e);
-}
+getChartData(window.location.pathname,drawChart);

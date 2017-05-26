@@ -3,6 +3,7 @@ var starsController = function (githubService) {
         githubService.getStars(req.params.lang,function (err, results) {
             res.render('stars', {
                 title: ' | Stars',
+                lang : req.params.lang.toUpperCase(),
                 item: results.items
             });
         })

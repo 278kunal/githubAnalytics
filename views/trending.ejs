@@ -8,9 +8,11 @@
     <div class="container">
         <div class="page-header">
             <h1>Trending Repositories |
-                <%= year %>
+                <%= year %> | <%=lang%>
             </h1>
         </div>
+
+        <% include ../views/partials/navpills %>
 
         <table class="table table-striped">
             <thead>
@@ -59,7 +61,7 @@
         </table>
 
         <div class="page-header">
-            <h1>Trending Repositories Chart</h1>
+            <h1>Trending Repositories Chart | <%= year %> | <%=lang%></h1>
         </div>
 
         <div id="plot">

@@ -1,7 +1,6 @@
 // Get data to be populated into the charts
-var getChartData = function(year,cb) {
-    console.log("I am in getchartData");
-    $.getJSON(year+"/data.json", function (result) {
+var getChartData = function(location,cb) {
+    $.getJSON(location+"/data.json", function (result) {
         // Do whatever what you want with this data
         var i;
         var chartData = [];
@@ -48,8 +47,4 @@ var drawChart = function (chartData) {
     var chart = new google.visualization.ColumnChart(document.getElementById('plot'));
     chart.draw(data, options);
 }
-var yearBtn = document.getElementsByClassName('btn-year');
-var _self = this;
-for(var i=0; i<yearBtn.length;i++){
-    yearBtn[i].addEventListener('click',_self.getChartData(yearBtn[i].innerText,drawChart))
-}
+getChartData(window.location.pathname,drawChart);

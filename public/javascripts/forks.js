@@ -1,6 +1,6 @@
 // Get data to be populated into the charts
-var getChartData = function(cb) {
-    $.getJSON("forks/data.json", function (result) {
+var getChartData = function(title,cb) {
+     $.getJSON(title+"/data.json", function (result) {
         // Do whatever what you want with this data
         var i;
         var chartData = [];
@@ -48,4 +48,4 @@ var drawChart = function (chartData) {
     chart.draw(data, options);
 }
 
-getChartData(drawChart);
+getChartData(window.location.pathname,drawChart);
