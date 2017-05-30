@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.main{
+  padding-top:90px;
+}
+
+.offset-1{
+  margin-left: 1%;
+}

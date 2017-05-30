@@ -5,23 +5,19 @@
 
 <body>
   <% include ../views/partials/nav %>
-  <div class="container">
+  <div class="container main">
     <div class="jumbotron">
       <h1>Github Analytics</h1>
-      <p>...</p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
 
     <form name="search" action="/search" method="post">
       <div class="form-group">
-        <label for="technology">Technology</label>
-        <input type="text" class="form-control" id="technology" name="technology" placeholder="Technology">
+        <input type="text" class="form-control" id="queryString" name="q" placeholder="Search">
       </div>
-      <div class="form-group">
-        <label for="queryString">Query String</label>
-        <input type="text" class="form-control" id="queryString" name="queryString" placeholder="Query String">
-      </div>
-      <button type="submit" class="btn btn-danger">Search</button>
+
+      <button type="submit" class="btn btn-default col-md-1 col-sm-offset-4">GIT Search</button>
+      <button type="submit" class="btn btn-default col-md-2 offset-1">I'm not Feeling Lucky</button>
     </form>
   </div>
 
