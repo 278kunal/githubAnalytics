@@ -52,3 +52,8 @@ githubCliDotCom.getData({
 
 More samples to come
 **Will be implementing oauth2.0 login so as to remove dependency on manually requesting Personal Access Token every time**
+
+## Screenshots
+
+- ![Screenshot-1](https://cloud.githubusercontent.com/assets/8478814/26626327/885ec86c-4614-11e7-8617-ba4c89771850.png)
+- ![Screenshot-2](https://cloud.githubusercontent.com/assets/8478814/26626333/8f65603a-4614-11e7-92b3-aefb56ded38c.png)
