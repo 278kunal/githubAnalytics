@@ -1,15 +1,16 @@
 var forksController = function (githubService) {
     var getData = function (req, res) {
-        githubService.getForks(function (err, results) {
+        githubService.getForks(req.params.lang,function (err, results) {
             res.render('forks', {
                 title: ' | Forks',
+                lang : req.params.lang.toUpperCase(),
                 item: results.items
             })
         })
     }
 
     var getJSON = function (req, res) {
-        githubService.getForks(function (err, results) {
+        githubService.getForks(req.params.lang,function (err, results) {
             res.json({
                 data: results.items
             });

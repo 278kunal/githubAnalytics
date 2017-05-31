@@ -19,9 +19,8 @@ var githubService = function () {
 
     }
 
-    var getStars = function (cb) {
-
-        var searchString = "q=stars:>1&s=stars&type=Repositories";
+    var getStars = function (language,cb) {
+        var searchString = "q=stars:>1+language:"+language+"&type=Repositories";
 
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
@@ -33,9 +32,9 @@ var githubService = function () {
             });
     }
 
-    var getForks = function (cb) {
+    var getForks = function (language, cb) {
 
-        var searchString = "q=forks%3A%3E1&sort=forks&type=Repositories";
+        var searchString = "q=forks%3A%3E1+language:"+language+"&type=Repositories";
 
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`
@@ -69,11 +68,11 @@ var githubService = function () {
         }
     }
 
-    var getTrending = function (year, cb) {
+    var getTrending = function (year, lang, cb) {
 
         var dateRange = getDateRange(year);
 
-        var searchString = "q=created%3A" + dateRange + "&type=Repositories&stars:>1&sort=s";
+        var searchString = "q=created%3A" + dateRange + "+language:"+lang+"&type=Repositories&stars:>1&sort=s";
 
         githubCliDotCom.getData({
                 path: `/search/repositories?${searchString}`

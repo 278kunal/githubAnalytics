@@ -1,15 +1,16 @@
 var starsController = function (githubService) {
     var getData = function (req, res) {
-        githubService.getStars(function (err, results) {
+        githubService.getStars(req.params.lang,function (err, results) {
             res.render('stars', {
                 title: ' | Stars',
+                lang : req.params.lang.toUpperCase(),
                 item: results.items
             });
         })
     }
 
     var getJSON = function (req, res) {
-        githubService.getStars(function (err, results) {
+        githubService.getStars(req.params.lang,function (err, results) {
             res.json({
                 data: results.items
             });

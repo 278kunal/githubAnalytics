@@ -1,4 +1,4 @@
- <nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -9,23 +9,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="#">Github Analytics</a>
+        <a class="navbar-brand" href="/">Github Analytics</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class=""><a href="/">Home <span class="sr-only">(current)</span></a></li>
-          <li class=""><a href="stars">Stars</a></li>
-          <li class=""><a href="forks">Forks</a></li>
+          <li class=""><a href="/stars/language/All">Stars</a></li>
+          <li class=""><a href="/forks/language/All">Forks</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trending <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li class="btn-year"><a id="2017" href="/trending/year/2017">2017</a></li>
-              <li class="btn-year"><a id="2016" href="/trending/year/2016">2016</a></li>
-              <li class="btn-year"><a id="2015" href="/trending/year/2015">2015</a></li>
-              <li class="btn-year"><a id="2014" href="/trending/year/2014">2014</a></li>
-              <li class="btn-year"><a id="2013" href="/trending/year/2013">2013</a></li>
+              <li class="btn-year"><a id="2017" href="/trending/year/2017/language/All">2017</a></li>
+              <li class="btn-year"><a id="2016" href="/trending/year/2016/language/All">2016</a></li>
+              <li class="btn-year"><a id="2015" href="/trending/year/2015/language/All">2015</a></li>
+              <li class="btn-year"><a id="2014" href="/trending/year/2014/language/All">2014</a></li>
+              <li class="btn-year"><a id="2013" href="/trending/year/2013/language/All">2013</a></li>
             </ul>
           </li>
         </ul>
@@ -35,8 +35,12 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a></li>
+      </ul>
       </div>
       <!-- /.navbar-collapse -->
+      
     </div>
     <!-- /.container-fluid -->
   </nav>

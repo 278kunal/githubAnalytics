@@ -1,9 +1,11 @@
 var trendingController = function (githubService) {
     var getData = function (req, res) {
-        var year = req.params.year;
-        githubService.getTrending(year, function (err, results) {
+        var year = req.params.year,
+            lang = req.params.lang;
+        githubService.getTrending(year, lang, function (err, results) {
             res.render('trending', {
                 title: ' | Trending',
+                lang : req.params.lang.toUpperCase(),
                 year: year,
                 item: results.items
             });
@@ -11,7 +13,9 @@ var trendingController = function (githubService) {
     }
 
     var getJSON = function (req, res) {
-        githubService.getStars(function (err, results) {
+        var year = req.params.year,
+            lang = req.params.lang;
+        githubService.getTrending(year, lang, function (err, results) {
             res.json({
                 data: results.items
             });

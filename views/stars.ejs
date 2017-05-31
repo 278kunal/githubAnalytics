@@ -7,9 +7,11 @@
         <% include ../views/partials/nav %>
             <div class="container">
                 <div class="page-header">
-                    <h1>Star Ranking</h1>
+                    <h1>Star Ranking | <%=lang%></h1>
                 </div>
-
+                
+                <% include ../views/partials/navpills %>
+                
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -56,7 +58,7 @@
                 </table>
 
                 <div class="page-header">
-                    <h1>Star Chart</h1>
+                    <h1>Star Chart | <%=lang%></h1>
                 </div>
 
                 <div id="plot">
@@ -65,11 +67,11 @@
             </div>
 
             <% include ../views/partials/footer %>
-            
-            <% include ../views/partials/scripts %>
 
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <script src="/javascripts/stars.js"></script>
+                <% include ../views/partials/scripts %>
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script src="/javascripts/stars.js"></script>
     </body>
 
 </html>
